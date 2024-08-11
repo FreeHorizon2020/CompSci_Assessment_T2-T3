@@ -18,11 +18,14 @@ public class Controller {
     RegisterGUI registerGUI = new RegisterGUI();
     PasswordResetGUI PassGUI = new PasswordResetGUI();
     Owner_Main_GUI OwnerMainGUI = new Owner_Main_GUI();
+    BookingManagmentGUI bookingGUI = new BookingManagmentGUI();
+    PopUp popup = new PopUp();
+    Add_Booking BookingA = new Add_Booking();
     ArrayList users = new ArrayList<Users>();
     
     
     public void open(){
-        deserialise();
+        Udeserialise();
         loginGUI.setVisible(true);
         registerGUI.setVisible(false);
         PassGUI.setVisible(false);
@@ -40,6 +43,8 @@ public class Controller {
         PassGUI.setVisible(false);
         OwnerMainGUI.setVisible(false);
         loginGUI.LoginFailTrip();
+        bookingGUI.setVisible(false);
+        BookingA.setVisible(false);
         
     }
     
@@ -48,25 +53,53 @@ public class Controller {
         registerGUI.setVisible(true);
         PassGUI.setVisible(false);
         OwnerMainGUI.setVisible(false);
+        bookingGUI.setVisible(false);
+        BookingA.setVisible(false);
     }
     public void openPassRes(){
         loginGUI.setVisible(false);
         registerGUI.setVisible(false);
         PassGUI.setVisible(true);
         OwnerMainGUI.setVisible(false);
+        bookingGUI.setVisible(false);
+        BookingA.setVisible(false);
     }
     public void openOwnerMain(){
         loginGUI.setVisible(false);
         registerGUI.setVisible(false);
         PassGUI.setVisible(false);
         OwnerMainGUI.setVisible(true);
+        bookingGUI.setVisible(false);
+        BookingA.setVisible(false);
+    }
+    public void openBooking(){
+        loginGUI.setVisible(false);
+        registerGUI.setVisible(false);
+        PassGUI.setVisible(false);
+        OwnerMainGUI.setVisible(false);
+        bookingGUI.setVisible(true);
+        BookingA.setVisible(false);
+    }
+    public void openAddBooking(){
+        loginGUI.setVisible(false);
+        registerGUI.setVisible(false);
+        PassGUI.setVisible(false);
+        OwnerMainGUI.setVisible(false);
+        bookingGUI.setVisible(false);
+        BookingA.setVisible(true);
+    }
+    public void popupOn(){
+        popup.setVisible(true);
+    }
+    public void popupOff(){
+        popup.setVisible(false);
     }
     public void adduser(String Name, Date DOB, String Email, String Phone, int YsOOL, String NmLicense, int LicenseNo, Date ExpiryDate, String Password, String Username, String AccessLevel){
         Model.Users user = new Model.Users(Name, DOB, Email, Phone, YsOOL, NmLicense, LicenseNo, ExpiryDate, Password, Username, AccessLevel);
 
         users.add(user);
         Login();
-        serialise();
+        Userialise();
     }
     public void ViewUser(Users Users){
         System.out.println(Users.getUsername());
@@ -87,19 +120,19 @@ public class Controller {
         }
         System.out.println("There are "+ users.size() + " users stored currently.");
     }
-        public void serialise(){
+        public void Userialise(){
               try {
          FileOutputStream fileOut = new FileOutputStream("users.txt");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
          out.writeObject(users);
          out.close();
          fileOut.close();
-         System.out.println("Serialized data saved");
+         System.out.println("User Serialized data saved");
       } catch (IOException i) {
          i.printStackTrace();
       }
     }
-        public void deserialise(){
+        public void Udeserialise(){
         try {
          FileInputStream fileIn = new FileInputStream("users.txt");
          ObjectInputStream in = new ObjectInputStream(fileIn);

@@ -34,13 +34,13 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="140" max="-2" attributes="0"/>
+              <Component id="Add_B" min="-2" pref="140" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="140" max="-2" attributes="0"/>
+              <Component id="EFB" min="-2" pref="140" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" pref="140" max="-2" attributes="0"/>
+              <Component id="VPB" min="-2" pref="140" max="-2" attributes="0"/>
               <EmptySpace pref="12" max="32767" attributes="0"/>
-              <Component id="jButton4" min="-2" pref="140" max="-2" attributes="0"/>
+              <Component id="MAP" min="-2" pref="140" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
@@ -60,11 +60,13 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="3" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton2" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                  <Component id="jButton4" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="VPB" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Add_B" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Component id="MAP" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
+                      <Component id="EFB" alignment="3" min="-2" pref="300" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
@@ -125,23 +127,26 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="Add_B">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add Booking"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Add_BActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="EFB">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="8" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Edit Current/ Future Bookings"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EFBActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="VPB">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="8" style="1"/>
@@ -149,16 +154,19 @@
         <Property name="text" type="java.lang.String" value="View Previous Bookings"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VPBActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="MAP">
       <Properties>
         <Property name="text" type="java.lang.String" value="Make a Payment"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAPActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
